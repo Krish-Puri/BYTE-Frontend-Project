@@ -1,0 +1,224 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-image: url('https://t4.ftcdn.net/jpg/02/07/15/43/360_F_207154340_wLIJus4m3SBl5sAQmpqN3Um7REnUhskU.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.logo {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  width: 75px;
+  /* Adjust the width as needed */
+  height: auto;
+  /* Maintain aspect ratio */
+  transform-style: preserve-3d;
+  /* Ensure 3D transformation */
+  animation: rotateLogo 10s infinite linear;
+  /* Rotate animation */
+}
+
+@keyframes rotateLogo {
+  from {
+    transform: rotateY(0deg);
+    /* Initial rotation angle */
+  }
+
+  to {
+    transform: rotateY(360deg);
+    /* Final rotation angle */
+  }
+}
+.logo:hover {
+  transform: scale(1.3);
+  cursor: pointer;
+  /* Increase size on hover */
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.logout {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #1e90ff;
+  border: none;
+  border-radius: 40px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+}
+
+/* Other styles here... */
+
+.byte-poems {
+  font-family: 'Kode Mono';
+  font-size: 56px;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.user-details {
+  font-weight: bold;
+  margin: 0;
+  color: #fff;
+  margin-top: 200px;   
+  margin-left: 50px;
+  font-size: 20px;
+}
+
+.username {
+  color: #fff;
+  margin-top: 10px;
+  margin-left: 50px ;
+}
+
+.submit-poem-heading{
+  color: #fff;
+  margin-top: 40px;
+  margin-left: 50px;
+  display: inline-block;
+}
+
+.submit-poem-heading:hover {
+  background-color: white;
+  color: black;
+}
+
+.just-poem {
+  color: #888;
+  /* Gray color */
+  text-decoration: underline;
+  /* Underline */
+  margin-top: 0px;
+  margin-left: 50px;
+  /* Adjust spacing from the heading */
+}
+
+/* Styles for the submit poem section */
+.submit-poem {
+  margin-top: 20px;
+  /* Adjust spacing */
+}
+
+/* Styles for the poem input */
+.poem-input {
+  width: 100%;
+  height: 100px;
+  /* Adjust height as needed */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  /* Allow vertical resizing */
+}
+
+/* Styles for the submit button */
+.submit-btn {
+  margin-top: 10px;
+  /* Adjust spacing */
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover effect for the submit button */
+.submit-btn:hover {
+  background-color: #007bff;
+}
+.poem-input-container {
+  margin-top: 20px;
+}
+.poem-input {
+  width: 75%;
+  padding: 20px;
+  /* Decreased padding */
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  font-size: 14px;
+  /* Decreased font size */
+  resize: vertical;
+  /* Allow vertical resizing */
+}
+
+/* Styles for 'Author' text */
+.just-author {
+  color: #ccc;
+  margin-top: 20px;
+  /* Adjust as needed */
+  margin-left: 50px;
+  /* Adjust as needed */
+  display: inline-block;
+  text-decoration: underline;
+}
+
+/* Styles for the text box for author */
+.author-input-container {
+  margin-top: 5px;
+  /* Adjust as needed */
+  margin-left: 0px;
+  /* Adjust as needed */
+}
+
+.author-input {
+  width: 75%;
+  /* Adjust width as needed */
+  height: 15px;
+  /* Adjust height as needed */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  resize: none;
+  text-align: left;
+  margin-left: 50px;
+  /* Align placeholder text to center */
+}
+
+.author-input::placeholder {
+  text-align: left;
+  /* Align placeholder text to left */
+}
+
+.submit-btn{
+  margin-top: 45px;
+  margin-left: 50px;
+  margin-right: 50px;  
+  border-radius: 50px;
+}
+
+/* CSS for heading 'Poems' */
+.poems-heading {
+  color: white;
+  margin-top: 20px;
+  margin-left: 50px;
+  /* Adjust the margin-top as needed */
+}
+
+/* CSS for the submitted poem and author */
+.submitted-poem-author {
+  margin-left: 50px;
+  color: white;
+}

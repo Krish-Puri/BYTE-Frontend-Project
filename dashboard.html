@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - B.Y.T.E. Poetry</title>
+  <link rel="stylesheet" href="dashboard-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    /* CSS for heading 'Poems' */
+    .poems-heading {
+      color: white;
+      margin-top: 20px;
+      /* Adjust the margin-top as needed */
+    }
+
+    /* CSS for the submitted poem and author */
+    .submitted-poem-author {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header section -->
+  <header class="header">
+    <!-- Logo with link -->
+    <a href="https://byte-mait.netlify.app/tasks" target="_blank">
+      <img src="https://byte-mait.netlify.app/byte-logo-transparent.png" alt="B.Y.T.E. Logo" class="logo">
+    </a>
+    <!-- Logout button -->
+    <button class="logout" onclick="logout()">Logout</button>
+  </header>
+
+  <!-- User Details -->
+  <h2 class="user-details">User Details</h2>
+  <p class="username" id="username"></p>
+
+  <!-- B.Y.T.E. Poems text -->
+  <h1 class="byte-poems">B.Y.T.E. Poems</h1>
+
+  <!-- Submit a New Poem section -->
+  <h2 class="submit-poem-heading">Submit a New Poem</h2>
+  <h3 class="just-poem">Poem:</h3>
+
+  <!-- Poems container -->
+  <div class="poems-container" id="poems-container"></div>
+
+  <div class="poem-input-container">
+    <label for="poemInput">Poem:</label>
+    <textarea id="poemInput" class="poem-input" placeholder="Enter your poem here"></textarea>
+  </div>
+
+  <!-- Author input -->
+  <h3 class="just-author">Author:</h3>
+  <div class="author-input-container">
+    <input type="text" id="authorInput" class="author-input" placeholder="Enter author's name here">
+  </div>
+
+  <!-- Submit button -->
+  <button class="submit-btn" onclick="submitPoem()">Submit</button>
+
+  <!-- Container to display submitted poems -->
+  <div id="submittedPoemsContainer"></div>
+
+  <script>
+    let poemsHeadingCreated = false; // Flag to track if poems heading has been created
+
+    function logout() {
+      window.location.href = "login.html"; // Redirect to the login page
+    }
+
+    // Function to retrieve username from local storage
+    function getUsername() {
+      return localStorage.getItem('username');
+    }
+
+    // Display username on page load
+    window.onload = function () {
+      const username = getUsername();
+      if (username) {
+        document.getElementById('username').textContent = `Username: ${username}`;
+      }
+    };
+
+    // Function to submit poem
+    function submitPoem() {
+      const poem = document.getElementById('poemInput').value;
+      const author = document.getElementById('authorInput').value;
+
+      if (!poemsHeadingCreated) { // Check if poems heading has not been created yet
+        // Create a new heading for the submitted poems
+        const poemsHeading = document.createElement('h2');
+        poemsHeading.textContent = 'Poems';
+        poemsHeading.classList.add('poems-heading'); // Add the CSS class
+
+        // Append the heading to the submitted poems container
+        const submittedPoemsContainer = document.getElementById('submittedPoemsContainer');
+        submittedPoemsContainer.appendChild(poemsHeading);
+
+        poemsHeadingCreated = true; // Set the flag to true after creating the heading
+      }
+
+      // Create a new div to hold the submitted poem and author
+      const poemAuthorDiv = document.createElement('div');
+      poemAuthorDiv.classList.add('submitted-poem-author'); // Add the CSS class
+
+      // Set the content of the div to display the submitted poem and author
+      poemAuthorDiv.textContent = `Poem: ${poem} | Author: ${author}`;
+
+      // Append the div to the submitted poems container
+      const submittedPoemsContainer = document.getElementById('submittedPoemsContainer');
+      submittedPoemsContainer.appendChild(poemAuthorDiv);
+
+      // Reset the text areas to blank after submission
+      document.getElementById('poemInput').value = '';
+      document.getElementById('authorInput').value = '';
+    }
+  </script>
+</body>
+
+</html>
